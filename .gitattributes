@@ -1,0 +1,9 @@
+/config export-ignore
+/lib export-ignore
+/node_modules export-ignore
+/source export-ignore
+Capfile export-ignore
+Gemfile export-ignore
+gulpfile export-ignore
+package.json export-ignore
+README.md export-ignore
