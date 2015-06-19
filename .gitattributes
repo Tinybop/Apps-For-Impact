@@ -4,6 +4,8 @@
 /source export-ignore
 Capfile export-ignore
 Gemfile export-ignore
-gulpfile export-ignore
+Gemfile.lock export-ignore
+gulpfile.js export-ignore
 package.json export-ignore
 README.md export-ignore
+REVISION export-ignore
