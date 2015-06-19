@@ -1,0 +1,245 @@
+@import '_base-normalize';
+
+
+// ============================================================================
+// Variables and Mixins
+// ============================================================================
+
+$black:            #303030;
+$green:            green;
+$red:              red;
+$white:            #ffffff;
+$yellow:           #ffd430;
+
+$background-color: $white;
+$border-radius:    .25em;
+$color--link:      blue;
+$color:            $black;
+$font-family:      Helvetica, Arial, sans-serif;
+$font-size--small: .8125em;
+$font-size:        1em;
+$line-height:      1.5;
+$max-width:        35em;
+$line-height-em:   ($line-height * 1em);
+
+
+// ============================================================================
+// Typography
+// ============================================================================
+
+// html
+
+body {
+  background-color: $background-color;
+  color: $color;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  width: 100%;
+}
+
+a {
+  color: $color--link;
+  text-decoration: none;
+
+  &:hover {
+    color: darken($color--link, 10%);
+    text-decoration: underline;
+  }
+}
+
+// abbr
+// address
+// b
+// blockquote
+// cite
+// code
+// del
+// dfn
+// dl
+// em
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family;
+  font-weight: bold;
+  line-height: $line-height;
+  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+
+  a {
+    color: $color;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+h1 {
+  font-size: ($font-size * 1.5);
+  margin-top: ($line-height-em / 1.5);
+  margin-bottom: (($line-height-em / 2) / 1.5);
+  max-width: ($max-width / 1.5);
+}
+
+h2 {
+  font-size: ($font-size * 1.25);
+  margin-top: ($line-height-em / 1.25);
+  margin-bottom: (($line-height-em / 2) / 1.25);
+  max-width: ($max-width / 1.25);
+}
+
+h3 {
+  font-size: $font-size;
+  margin-top: $line-height-em;
+  margin-bottom: ($line-height-em / 2);
+  max-width: $max-width;
+}
+
+h4,
+h5,
+h6 {
+  font-size: $font-size;
+  margin-top: $line-height-em;
+  margin-bottom: 0;
+  max-width: $max-width;
+}
+
+hr {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid $black;
+  border-left: 0;
+  margin-top: $line-height-em;
+  margin-bottom: $line-height-em;
+}
+
+// i
+// ins
+// kbd
+// mark
+// ol
+
+p {
+  margin-top: ($line-height-em / 2);
+  margin-bottom: ($line-height-em / 2);
+  max-width: $max-width;
+}
+
+// pre
+// pre code
+// q
+// s
+// samp
+
+small {
+  font-size: $font-size--small;
+}
+
+// strong
+// sub
+// summary
+// sup
+// time
+// u
+
+ul {
+  list-style-type: disc;
+  margin-top: ($line-height-em / 2);
+  margin-right: 0;
+  margin-bottom: ($line-height-em / 2);
+  margin-left: 0;
+  padding-left: $font-size;
+}
+
+ul,
+ol {
+  max-width: $max-width - $font-size;
+
+  ul,
+  ol {
+    margin-bottom: 0;
+  }
+}
+
+// var
+
+::-moz-selection {
+  background: lighten($yellow, 25%);
+  text-shadow: none;
+}
+
+::selection {
+  background: lighten($yellow, 25%);
+  text-shadow: none;
+}
+
+
+// ============================================================================
+// Forms
+// ============================================================================
+
+// button
+// col
+// colgroup
+// fieldset
+// input
+// label
+// legend
+// optgroup
+// option
+// output
+// select
+// textarea
+
+
+// ============================================================================
+// Media
+// ============================================================================
+
+audio,
+canvas,
+video,
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  height: auto;
+}
+
+// audio
+// canvas
+// embed
+// figure
+// figcaption
+// iframe
+// img
+// object
+// video
+
+
+// ============================================================================
+// Tables
+// ============================================================================
+
+// caption
+// table
+// tbody
+// td
+// tfoot
+// th
+// thead
+// tr
+
+
+// ============================================================================
+// Layout
+// ============================================================================
+
+
+// ============================================================================
+// Modules
+// ============================================================================
