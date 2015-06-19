@@ -15,7 +15,8 @@ $background-color: $white;
 $border-radius:    .25em;
 $color--link:      blue;
 $color:            $black;
-$font-family:      Helvetica, Arial, sans-serif;
+$font-family:      Georgia, Times, 'Times New Roman', serif;
+$font-family--alt: Helvetica, Arial, sans-serif;
 $font-size--small: .8125em;
 $font-size:        1em;
 $line-height:      1.5;
@@ -65,7 +66,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family;
+  font-family: $font-family--alt;
   font-weight: bold;
   line-height: $line-height;
   text-rendering: optimizeLegibility; // Fix the character spacing for headings
@@ -239,7 +240,32 @@ img {
 // Layout
 // ============================================================================
 
+* {
+  box-sizing: border-box;
+}
 
-// ============================================================================
-// Modules
-// ============================================================================
+.site-header,
+.site-main,
+.site-footer {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 62.5em; // 1000px
+  padding-right: $line-height-em;
+  padding-left: $line-height-em;
+}
+
+.module {
+  margin-top: $line-height-em;
+  margin-bottom: $line-height-em;
+  padding-top: $line-height-em;
+  padding-bottom: $line-height-em;
+  border-top: .5em solid $yellow;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
