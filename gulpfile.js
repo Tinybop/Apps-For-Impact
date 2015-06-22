@@ -7,20 +7,22 @@
 var gulp = require('gulp'),
   autoprefixer = require('gulp-autoprefixer'),
   browserSync = require('browser-sync'),
-  cssmin = require('gulp-cssmin'),
   del = require('del'),
+  minifyCss = require('gulp-minify-css'),
+  minifyHtml = require('gulp-minify-html'),
   notify = require('gulp-notify'),
   reload = browserSync.reload,
-  rename = require('gulp-rename'),
   rev = require('gulp-rev'),
-  sass = require('gulp-sass');
+  sass = require('gulp-sass'),
+  uglify = require('gulp-uglify'),
+  usemin = require('gulp-usemin');
 
 
 // ============================================================================
 // Tasks
 // ============================================================================
 
-gulp.task('browser-sync', function() {
+gulp.task('browser-sync', function () {
   browserSync({
     proxy: 'appsforimpact.dev',
     notify: false,
@@ -30,26 +32,38 @@ gulp.task('browser-sync', function() {
   });
 });
 
-gulp.task('styles', function () {
+gulp.task('usemin', function () {
 
-  del(['css/*.css']);
+  del(['dist/css/*.css']);
 
-  return gulp.src('source/sass/*.scss')
-    .pipe(sass({
-      errLogToConsole: false,
-      onError: function(err) {
-        return notify().write(err);
-      }
+  return gulp.src('src/*.html')
+    .pipe(usemin({
+      css: [
+        sass({
+          errLogToConsole: false,
+          onError: function (err) {
+            return notify().write(err);
+          }
+        }),
+        autoprefixer('last 1 version', 'ie 9', 'ie 10', 'ios 6'),
+        minifyCss(),
+        'concat',
+        rev()
+      ],
+      html: [
+        minifyHtml({
+          empty: true
+        })
+      ],
+      js: [uglify(), rev()],
+      inlinejs: [uglify()],
+      inlinecss: [minifyCss(), 'concat']
     }))
-    .pipe(autoprefixer('last 1 version', 'ie 9', 'ie 10', 'ios 6'))
-    .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(gulp.dest('css/'));
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('watch', function () {
-  gulp.watch('source/sass/*.scss', ['styles', reload]);
-  gulp.watch('*.html', reload);
+  gulp.watch('src/**/*', ['usemin', reload]);
 });
 
-gulp.task('default', ['styles','watch','browser-sync']);
+gulp.task('default', ['usemin', 'watch', 'browser-sync']);
