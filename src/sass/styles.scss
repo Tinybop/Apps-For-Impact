@@ -390,6 +390,16 @@ svg {
   box-sizing: border-box;
 }
 
+.hero {
+  background-image: url('/img/tinybop_simplemachines_play3.jpg');
+  background-size: cover;
+  background-position: center;
+  padding-top: $line-height-em;
+  padding-bottom: $line-height-em;
+  width: 100vw;
+  height: 56.25vw;
+}
+
 .site-header,
 .site-main,
 .site-footer {
@@ -417,7 +427,7 @@ svg {
 }
 
 .branding {
-  max-width: 272px;
+  width: percentage(2/5);
 }
 
 .company-list {
@@ -442,6 +452,10 @@ svg {
 
 @media only screen and (min-width: 750px) {
 
+  .branding {
+    width: percentage(1/3);
+  }
+
   .company {
     width: percentage(1/3);
 
@@ -456,6 +470,10 @@ svg {
 }
 
 @media only screen and (min-width: 800px) {
+
+  .branding {
+    width: percentage(1/4);
+  }
 
   .company {
     width: percentage(1/4);
