@@ -12,7 +12,7 @@ $grey--light:       lighten($grey, 10%);
 $green:            green;
 $red:              red;
 $white:            #ffffff;
-$yellow:           #ffd430;
+$yellow:           #ffd600;
 
 $background-color: $white;
 $border-radius:    .25em;
@@ -414,6 +414,10 @@ svg {
   > :last-child {
     margin-bottom: 0;
   }
+}
+
+.branding {
+  max-width: 272px;
 }
 
 .company-list {
