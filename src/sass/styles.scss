@@ -404,7 +404,7 @@ svg {
 
 .site-header {
   background-color: $yellow;
-  background-image: url('/img/tinybop_simplemachines_play3.jpg');
+  background-image: url('/img/hero.jpg');
   background-size: cover;
   background-position: center;
   padding-top: $line-height-em;
@@ -449,6 +449,9 @@ svg {
   list-style-type: none;
   max-width: none;
   padding-left: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
 .company {
@@ -458,6 +461,9 @@ svg {
   padding-left: $line-height-em;
   float: left;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   &:nth-child(2n+1) {
     clear: left;
