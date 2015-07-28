@@ -30,7 +30,7 @@
       online: true,
     });
 
-    gulp.watch('src/**/*.scss', ['styles']);
+    gulp.watch('src/**/*', ['styles']);
     gulp.watch('dist/**/*').on('change', browserSync.reload);
   });
 
